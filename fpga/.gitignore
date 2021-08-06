@@ -1,0 +1,10 @@
+modelsim.ini
+libs/lib_VLOG/*
+libs/lib_BENCH/*
+transcript
+vsim.wlf
+wlftE7szf4
+*.bak
+quartus/hdl_harness/simulation/
+quartus/hdl_harness/cr_ie_info.json
+quartus/hdl_harness/.qsys_edit
