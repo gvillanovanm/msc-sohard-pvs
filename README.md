@@ -33,10 +33,14 @@ Simulation of simplified automata-based heart model on modelsim software and syn
 
 Printed Circuit Board to couple real pacemaker and FPGA heart model.
 
-### Paper
+### Papers and others links
 
-[1] Magalhães, Gabriel VN, Gutemberg G. Santos Jr, and Antonio MN Lima. "An electrical extension of automata-based heart models for closed-loop validation of pacemakers." Simpósio Brasileiro de Automação Inteligente-SBAI. Vol. 1. No. 1. 2021.
+#### Papers
+* Magalhães, Gabriel VN, Gutemberg G. Santos Jr, and Antonio MN Lima. "An electrical extension of automata-based heart models for closed-loop validation of pacemakers." Simpósio Brasileiro de Automação Inteligente-SBAI. Vol. 1. No. 1. 2021.
 
+#### Links
+* [Paper presentation (in Portuguese)](https://www.youtube.com/watch?v=I9eNSNevT-Y&t).
+* [Platform presentation (in Portuguese)](https://www.youtube.com/watch?v=zhirvjsvrzc).
 
 ### About
 
