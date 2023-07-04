@@ -23,7 +23,7 @@ fixed_step                = .00001;
 % ----------------------------------------------------------------------- %
 % BATTERY
 % ----------------------------------------------------------------------- %
-E_battery                 = 2.8;                            % [V]   
+E_battery                 = PM_ON*2.8;                      % [V]   
 nonc                      = 2.8-2.679;                      % [V]
 Rohm                      = 2.800;                          % [Ohms]
 w1                        = 10^(4);                         % [Hz]
@@ -42,14 +42,19 @@ R_telemetry               = E_battery/i_telemetry_curDrain; % [Ohms]
 % ----------------------------------------------------------------------- %
 % ATRIAL PACING
 % ----------------------------------------------------------------------- %
+enable_fail_to_capture    = 0;
+
 if(fixed_step==.0001)
     aPulseWidth           = 4;                              % [10-4s] 
-    aDoubleVoltEn         = 1;                              % 0=2.5V/1=5V 
 else
     aPulseWidth           = (.2)*100;                       % [10-4s] 
-    aDoubleVoltEn         = 1;                              % 0=2.5V/1=5V 
+    
+    if(enable_fail_to_capture)
+        aPulseWidth       = .1*100;                         % [10-5s] 
+    end
 end
 
+aDoubleVoltEn             = 1;                              % 0=2.5V/1=5V 
 T_aSwitch                 = .001;                           % [s]
 Cp_a                      = 10;                             % [uF]
 Co_a                      = 10;                             % [uF]
@@ -75,12 +80,11 @@ R_aPowerComparatorAmp     = 2800000;                        % [Ohms]
 % ----------------------------------------------------------------------- %
 if(fixed_step==.0001)
     vPulseWidth           = 4;                              % [10-4s] 
-    vDoubleVoltEn         = 1;                              % 0=2.5V/1=5V 
 else
     vPulseWidth           = (.2)*100;                       % [() ms] 
-    vDoubleVoltEn         = 1;                              % 0=2.5V/1=5V 
 end
 
+vDoubleVoltEn             = 1;                              % 0=2.5V/1=5V 
 T_vSwitch                 = .001;                           % [s]
 Cp_v                      = 10;                             % [uF]
 Co_v                      = 10;                             % [uF]
@@ -161,7 +165,6 @@ tc_ventricular            = .3*.001;
 % ----------------------------------------------------------------------- %
 AEGM_sel                  = 0;                              % 0:ISO/1:Dip;
 VEGM_sel                  = 1;                              % 0:ISO/1:Dip;
-
 enable_oversensing        = 0;
 
 if(enable_oversensing)
